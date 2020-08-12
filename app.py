@@ -8,7 +8,7 @@ from security import authenticate, identity
 from resources.user import UserRegister
 from resources.item import Item, ItemList
 from resources.store import Store, StoreList
-from db import db
+
 
 #flask restful does jsonfiy for us, so we dont need it
 
@@ -18,9 +18,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 api = Api(app)
 app.secret_key = 'justin'
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+
 
 
 
